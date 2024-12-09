@@ -3,17 +3,27 @@
 ## 0. Project Summary
 In this project, the performance of the 4D Gaussian Splitting algorithm, a technology for dynamic scene rendering, was evaluated in various scenarios. Qualitative and quantitative evaluations were conducted for various scenarios of the dataset, and the performance and practical application potential of 4D Gaussian Splitting were analyzed through this process.
 
-## 1. Demos
-|Before|After|
-|---|---|
-|||
+## 1. Up Front Scenario Demos
+|Coarse Training|Dense Training|Result|
+|---|---|---|
+|![Coarse_Training](/assets/up_fw_before_Training.gif)|![Dense_Training](/assets/up_fw_after_coarse_training.gif)|![Result](/assets/up_fw_real.gif)|
+
+
+### Result Analysis
+|SSIM|PSNR|LIPIPS-vgg|
+|---|---|---|
+|![output1](/assets/output1.png)|![output2](/assets/output2.png)|![output3](/assets/output3.png)|
+
+|LIPIPS-alex|MS-SSIM|D-SSIM|
+|---|---|---|
+|![output4](/assets/output4.png)|![output5](/assets/output5.png)|![output6](/assets/output6.png)|
 
 ## 2. Goal 
 What is the best scenario applying gaussian splatting.
 
 
 ## 3. Conclusion and Future Works
-1. The best results came from an environment taken in Lear with a wider FOV (Feed of View).
+1. The best results came from an environment taken in rear with a wider FOV (Feed of View).
 2. Reconstruction was carried out based on the pure rotation under the guise of the plane, but a scenario taken to show the side part of the robot will also be needed.
 3. Limitations exist because it is a Handheld camera. For a more accurate comparison, further experiments in control or simulation through a robot are required.
 
