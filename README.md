@@ -1,9 +1,23 @@
 # Performance Evaluation of 4D Gaussian Splatting Algorithm in Various Scenarios
 
-## Project Summary
+## 0. Project Summary
 In this project, the performance of the 4D Gaussian Splitting algorithm, a technology for dynamic scene rendering, was evaluated in various scenarios. Qualitative and quantitative evaluations were conducted for various scenarios of the dataset, and the performance and practical application potential of 4D Gaussian Splitting were analyzed through this process.
 
-## Environmental Setups
+## 1. Demos
+|Before|After|
+|---|---|
+|||
+
+## 2. Goal 
+What is the best scenario applying gaussian splatting.
+
+
+## 3. Conclusion and Future Works
+1. The best results came from an environment taken in Lear with a wider FOV (Feed of View).
+2. Reconstruction was carried out based on the pure rotation under the guise of the plane, but a scenario taken to show the side part of the robot will also be needed.
+3. Limitations exist because it is a Handheld camera. For a more accurate comparison, further experiments in control or simulation through a robot are required.
+
+## 4. Environmental Setups
 
 Please follow the [3D-GS](https://github.com/graphdeco-inria/gaussian-splatting) to install the relative packages.
 
@@ -22,7 +36,7 @@ pip install -e submodules/simple-knn
 Our test setup was:
 - Ubuntu 22.04: `pytorch: 1.13.1+cu117`
 
-## Data Preparation
+## 5. Data Preparation
 
 **Custom Datasets:**
 Orginize your dataset as follows:
@@ -49,7 +63,7 @@ Orginize your dataset as follows:
 ```
 
 
-## Training
+## 6. Training
 
 For your custom datasets, install nerfstudio and follow their [COLMAP](https://colmap.github.io/) pipeline. You should install COLMAP at first, then:
 
@@ -62,7 +76,7 @@ python train.py -s data/your-ns-data/colmap --port 6017 --expname "custom" --con
 ```
 You can customize your training config through the config files.
 
-## Checkpoint
+## 7. Checkpoint
 
 Also, you can train your model with checkpoint.
 
@@ -77,7 +91,7 @@ python train.py -s data/dnerf/bouncingballs --port 6017 --expname "dnerf/bouncin
 # finestage: --start_checkpoint "output/dnerf/bouncingballs/chkpnt_fine_200.pth"
 ```
 
-## Rendering
+## 8. Rendering
 
 Run the following script to render the images.
 
@@ -85,7 +99,7 @@ Run the following script to render the images.
 python render.py --model_path "output/dnerf/bouncingballs/"  --skip_train --configs arguments/dnerf/bouncingballs.py 
 ```
 
-## Evaluation
+## 9. Evaluation
 
 You can just run the following script to evaluate the model.
 
@@ -94,11 +108,11 @@ python metrics.py --model_path "output/dnerf/bouncingballs/"
 ```
 
 
-## Viewer
+## 10. Viewer
 
 
 
-## Citation
+## 11. Citation
 
 ```
 @InProceedings{Wu_2024_CVPR,
